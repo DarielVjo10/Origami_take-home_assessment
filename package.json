@@ -1,0 +1,33 @@
+{
+  "name": "origamirisk-login-automation",
+  "version": "1.0.0",
+  "description": "OrigamiRisk_LoginAutomation: Playwright + TypeScript tests for the login flow of the-internet.herokuapp.com.",
+  "private": true,
+  "author": "Dariel",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "playwright test",
+    "test:chromium": "playwright test --project=chromium",
+    "test:mandatory": "playwright test --grep @mandatory",
+    "test:headed": "playwright test --headed --project=chromium",
+    "test:debug": "playwright test --debug --project=chromium",
+    "report": "playwright show-report",
+    "typecheck": "tsc",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "devDependencies": {
+    "@eslint/js": "9.39.5",
+    "@playwright/test": "1.63.0",
+    "@types/node": "22.20.5",
+    "eslint": "9.39.5",
+    "eslint-config-prettier": "10.1.8",
+    "eslint-plugin-playwright": "2.12.2",
+    "prettier": "3.9.10",
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.72.1"
+  }
+}
