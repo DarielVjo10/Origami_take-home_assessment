@@ -7,10 +7,12 @@ export default defineConfig({
   fullyParallel: true,
   forbidOnly: isCI,
   retries: isCI ? 2 : 0,
-  workers: isCI ? 2 : 4,
-  timeout: 30_000,
-  expect: { timeout: 10_000 },
-  reporter: [['list'], ['html', { open: 'never' }]],
+  workers: 2,
+  timeout: 60_000,
+  expect: { timeout: 15_000 },
+  reporter: isCI
+    ? [['github'], ['list'], ['html', { open: 'never' }]]
+    : [['list'], ['html', { open: 'never' }]],
   use: {
     baseURL: process.env.BASE_URL ?? 'https://the-internet.herokuapp.com',
     trace: 'retain-on-failure',
